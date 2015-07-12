@@ -12,7 +12,7 @@ package Rest::Repose::Mopes::ApplyReposeAttributeTrait {
 
     Moose::Exporter->setup_import_methods(
         class_metaroles => {
-            attribute => ['Rest::Repose::Mopes::ReposeAttributeTrait'],
+      #      attribute => ['Rest::Repose::Mopes::ReposeAttributeTrait'],
         }
     );
 

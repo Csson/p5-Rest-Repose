@@ -33,7 +33,15 @@ resource Domain {
 
             with 'TestFor::Role::Domain::CompleteDomainProperties';
 
-            param thing => (
+            prop thing => (
+                isa => Bool,
+                optional => 1,
+            );
+            prop receiving_dns_records => (
+                isa => Bool,
+                optional => 1,
+            );
+            prop sending_dns_records => (
                 isa => Bool,
                 optional => 1,
             );

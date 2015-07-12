@@ -27,11 +27,22 @@ package Rest::Repose::Mopes::ReposeAttributeTrait {
         isa => Bool,
         default => 0,
     );
-    has printable_prefix => (
+    has real_name => (
         is => 'rw',
         isa => Str,
         predicate => 1,
     );
+    has dpath => (
+        is => 'ro',
+        isa => Str,
+    );
+    has qs => (
+        is => 'ro',
+        isa => Bool,
+        default => 0,
+    );
+    
+    
     
     
     

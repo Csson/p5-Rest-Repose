@@ -3,6 +3,10 @@ use strict;
 use warnings;
 use MoopsX::UsingMoose;
 
-role Rest::Repose::Role::ResponseHandler;
+# VERSION
+# PODCLASSNAME
+# ABSTRACT: ..
+
+role Rest::Repose::Role::ResponseHandler {};
 
 1;

@@ -12,7 +12,7 @@ package Rest::Repose::Mopes::ReposePropAttributeTrait {
     use namespace::clean -except => 'meta';
     use MooseX::AttributeShortcuts;
 
-    has dpath => (
+    has prop_name => (
         is => 'ro',
         isa => Str,
         required => 1,

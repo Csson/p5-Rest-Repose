@@ -7,9 +7,10 @@ use warnings;
 package #
     Rest::Repose::Standard {
 
-    use base 'Moops';
+    use base 'MoopsX::UsingMoose';
     use List::AllUtils();
     use MooseX::AttributeDocumented();
+    use MooseX::AttributeShortcuts();
     use Types::Standard();
     use Types::RestRepose();
     use Data::Dump::Streamer();
@@ -21,6 +22,7 @@ package #
         push @{ $opts{'imports'} ||= [] } => (
             'List::AllUtils'    => [qw/any none sum uniq/],
             'MooseX::AttributeDocumented' => [],
+            'MooseX::AttributeShortcuts' => [],
             'Types::Standard' => [{ replace => 1 }, '-types'],
             'Types::RestRepose' => [{ replace => 1 }, '-types'],
             'Data::Dump::Streamer' => ['Dump'],

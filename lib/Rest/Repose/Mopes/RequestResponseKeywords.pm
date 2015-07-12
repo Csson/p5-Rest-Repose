@@ -25,7 +25,6 @@ after parse => sub {
     if($self->keyword eq 'request') {
         push @{ $self->relations->{'with'} ||= [] } => (
             'Rest::Repose::Role::Request',
-            'Rest::Repose::Mopes::ReposeAttributeTrait',
         );
     }
     elsif($self->keyword eq 'response') {

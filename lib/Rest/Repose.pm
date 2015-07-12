@@ -12,22 +12,26 @@ use base 'MoopsX::UsingMoose';
 use Types::Standard();
 use Rest::Repose::Mopes::Moose();
 use MooseX::AttributeShortcuts();
+use Rest::Repose::HttpResponse();
+use Data::DPath();
 
 sub import {
-	my $class = shift;
-	my %opts = @_;
+    my $class = shift;
+    my %opts = @_;
 
-	push @{ $opts{'imports'} ||= [] } => (
-		'Types::Standard' => ['-types'],
-		'Rest::Repose::Mopes::Moose' => [],
-		'MooseX::AttributeShortcuts' => [],
-	);
+    push @{ $opts{'imports'} ||= [] } => (
+        'Types::Standard' => ['-types'],
+        'Rest::Repose::Mopes::Moose' => [],
+        'MooseX::AttributeShortcuts' => [],
+        'Rest::Repose::HttpResponse' => [],
+        'Data::DPath' => ['dpath'],
+    );
 
-	push @{ $opts{'traits'} ||= [] } => (
-		'Rest::Repose::Mopes::RequestResponseKeywords',
-	);
+    push @{ $opts{'traits'} ||= [] } => (
+        'Rest::Repose::Mopes::RequestResponseKeywords',
+    );
 
-	$class->SUPER::import(%opts);
+    $class->SUPER::import(%opts);
 }
 
 1;
