@@ -4,7 +4,7 @@ Rest::Repose - Short intro
 
 # VERSION
 
-Version 0.0001, released 2015-08-01.
+Version 0.0002, released 2015-08-01.
 
 # SYNOPSIS
 
