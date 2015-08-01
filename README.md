@@ -4,9 +4,7 @@ Rest::Repose - Short intro
 
 # VERSION
 
-Version 0.0001, released 2015-07-12.
-
-# TASK CONTENTS
+Version 0.0001, released 2015-08-01.
 
 # SYNOPSIS
 
@@ -17,6 +15,10 @@ Version 0.0001, released 2015-07-12.
 Rest::Repose is ...
 
 # SEE ALSO
+
+# SOURCE
+
+[https://github.com/Csson/p5-Rest-Repose](https://github.com/Csson/p5-Rest-Repose)
 
 # HOMEPAGE
 

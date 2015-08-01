@@ -13,7 +13,7 @@ use Moose::Meta::Role;
 use Carp;
 
 Moose::Exporter->setup_import_methods(
-    with_meta => [qw/get put post http_delete param prop/],
+    with_meta => [qw/get put post http_delete param prop body/],
     class => {
         meta_roles => ['Rest::Repose::Mopes::ReposeAttributeTrait'],
     },
@@ -86,10 +86,6 @@ sub prop {
 
     ($attr, $settings) = set_attribute_traits($meta, $prop_name, Str, ['ReposeProp'], $settings, $attr);
 
-    if(scalar keys %$settings) {
-        carp sprintf q{The following attributes (in %s, prop '%s') has no meaning: %s}, $meta->name, $prop_name, join ', ' => sort keys %$settings;
-    }
-
     my $path_name = sprintf 'repose_dpath_%s' => $prop_name;
     my $prop_isa = delete $settings->{'isa'} || Str;
     $meta->add_attribute($path_name, %$attr);
@@ -108,6 +104,7 @@ sub prop {
                     "count_$prop_name" => 'count',
                     "filter_$prop_name" => 'grep',
                     "map_$prop_name" => 'map',
+                    "find_$prop_name" => 'first',
                 },
             )
         );
@@ -143,6 +140,10 @@ sub prop {
                 },
             )
         );
+    }
+
+    if(scalar keys %$settings) {
+        carp sprintf q{The following attributes (in %s, prop '%s') has no meaning: %s}, $meta->name, $prop_name, join ', ' => sort keys %$settings;
     }
 #    else {
 #        $meta->add_method($prop_name => sub {
@@ -220,6 +221,13 @@ sub modify_response {
     $meta->add_method('modify_response', $method);
 }
 
+sub body {
+    my $meta = shift;
+    my $body_sub = shift;
+
+    $meta->add_method(printable_body => $body_sub);
+}
+
 sub get {
     my $meta = shift;
     my $destination = shift;
@@ -235,6 +243,13 @@ sub put {
 sub post {
     my $meta = shift;
     my $destination = shift;
+    my $content_type = shift || 'form-data';
+
+    $meta->add_attribute(repose_content_type => (
+        is => 'ro',
+        isa => 'Str',
+        default => $content_type,
+    ));
 
     prepare_http_method($meta, 'post', $destination);
 }

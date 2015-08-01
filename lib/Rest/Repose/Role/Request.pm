@@ -56,10 +56,12 @@ with Rest::Repose::Role::Printable {
         my $method = $self->repose_http_method;
         my $url = $self->_repose_url;
 
+        my $printable = $self->meta->has_method('printable_body') ? $self->printable_body : $self->_printable;
+
         my $response = $method eq 'get'    ? $self->_uaget($url)
-                     : $method eq 'post'   ? $self->_uapost($url, $self->_printable)
+                     : $method eq 'post'   ? $self->_uapost($url, $printable)
                      : $method eq 'delete' ? $self->_uadelete($url)
-                     : $method eq 'put'    ? $self->_uaput($url, $self->_printable)
+                     : $method eq 'put'    ? $self->_uaput($url, $printable)
                      :                       undef
                      ;
 
@@ -159,7 +161,10 @@ with Rest::Repose::Role::Printable {
         my $url = shift;
         my $contents = shift;
 
-        my $request = POST($url, Content_Type => 'form-data', Content => $contents);
+#warn '>>' . $contents->[0] . '<<';
+#$contents = $contents->[0];
+
+        my $request = POST($url, Content_Type => $self->repose_content_type, Content => $contents);
         my $result = $self->ua->request($request);
 
         return $result;
