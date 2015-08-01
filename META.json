@@ -88,6 +88,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Data::DPath" : "0",
             "MoopsX::UsingMoose" : "0",
             "perl" : "5.014000"
          }
@@ -106,59 +107,59 @@
    "provides" : {
       "Moose::Meta::Attribute::Custom::Trait::Repose" : {
          "file" : "lib/Moose/Meta/Attribute/Custom/Trait/Repose.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Moose::Meta::Attribute::Custom::Trait::ReposeProp" : {
          "file" : "lib/Moose/Meta/Attribute/Custom/Trait/ReposeProp.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose" : {
          "file" : "lib/Rest/Repose.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::HttpResponse" : {
          "file" : "lib/Rest/Repose/HttpResponse.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::Mopes::ApplyReposeAttributeTrait" : {
          "file" : "lib/Rest/Repose/Mopes/ApplyReposeAttributeTrait.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::Mopes::Moose" : {
          "file" : "lib/Rest/Repose/Mopes/Moose.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::Mopes::ReposeAttributeTrait" : {
          "file" : "lib/Rest/Repose/Mopes/ReposeAttributeTrait.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::Mopes::ReposePropAttributeTrait" : {
          "file" : "lib/Rest/Repose/Mopes/ReposePropAttributeTrait.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::Mopes::RequestResponseKeywords" : {
          "file" : "lib/Rest/Repose/Mopes/RequestResponseKeywords.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::Role::Printable" : {
          "file" : "lib/Rest/Repose/Role/Printable.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::Role::Request" : {
          "file" : "lib/Rest/Repose/Role/Request.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::Role::Response" : {
          "file" : "lib/Rest/Repose/Role/Response.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::Role::ResponseHandler" : {
          "file" : "lib/Rest/Repose/Role/ResponseHandler.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       },
       "Rest::Repose::UserAgent" : {
          "file" : "lib/Rest/Repose/UserAgent.pm",
-         "version" : "0.0002"
+         "version" : "0.0003"
       }
    },
    "release_status" : "stable",
@@ -173,6 +174,6 @@
          "web" : "https://github.com/Csson/p5-Rest-Repose"
       }
    },
-   "version" : "0.0002"
+   "version" : "0.0003"
 }
 

@@ -9,6 +9,7 @@ prereqs:
     requires:
       - perl: 5.014000
       - MoopsX::UsingMoose
+      - Data::DPath
 
 plugins:
   - +config: Author::CSSON

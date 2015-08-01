@@ -14,11 +14,15 @@ Revision history for Rest-Repose
  [New Features]
 
  [Requirements]
- - Missing prereq: MoopsX::UsingMoose
+ - Missing prereq: Data::DPath
 
  [Revision]
 
  [Testing]
+
+0.0002 2015-08-01T22:37:57Z CEST
+ [Requirements]
+ - Missing prereq: MoopsX::UsingMoose
 
 0.0001 2015-08-01T22:33:31Z CEST
  - Initial release
